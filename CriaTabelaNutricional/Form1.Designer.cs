@@ -67,6 +67,11 @@
             label15 = new Label();
             label16 = new Label();
             label17 = new Label();
+            panel2 = new Panel();
+            ckbAltoAcucarAdicionado = new CheckBox();
+            ckbAltoGorduraSaturada = new CheckBox();
+            ckbAltoSodio = new CheckBox();
+            btnSalvar = new Button();
             SuspendLayout();
             // 
             // txtDescricao
@@ -105,6 +110,7 @@
             ckbImprimeLactoseGalactose.TabIndex = 3;
             ckbImprimeLactoseGalactose.Text = "Imprimir Lactose e Galactose?";
             ckbImprimeLactoseGalactose.UseVisualStyleBackColor = true;
+            ckbImprimeLactoseGalactose.CheckedChanged += ckbImprimeLactoseGalactose_CheckedChanged;
             // 
             // txtPorcaoPorEmbalagem
             // 
@@ -139,6 +145,7 @@
             // cmbPorcaoUnidade
             // 
             cmbPorcaoUnidade.FormattingEnabled = true;
+            cmbPorcaoUnidade.Items.AddRange(new object[] { "Gramas(g)", "Mililitros(ml)" });
             cmbPorcaoUnidade.Location = new Point(290, 98);
             cmbPorcaoUnidade.Name = "cmbPorcaoUnidade";
             cmbPorcaoUnidade.Size = new Size(75, 23);
@@ -225,6 +232,7 @@
             // 
             // txtLactose
             // 
+            txtLactose.Enabled = false;
             txtLactose.Location = new Point(751, 181);
             txtLactose.Name = "txtLactose";
             txtLactose.Size = new Size(150, 23);
@@ -232,6 +240,7 @@
             // 
             // txtGalactose
             // 
+            txtGalactose.Enabled = false;
             txtGalactose.Location = new Point(751, 244);
             txtGalactose.Name = "txtGalactose";
             txtGalactose.Size = new Size(150, 23);
@@ -387,11 +396,67 @@
             label17.TabIndex = 37;
             label17.Text = "Fibras Alimentares";
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.DimGray;
+            panel2.Location = new Point(26, 362);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(875, 4);
+            panel2.TabIndex = 12;
+            // 
+            // ckbAltoAcucarAdicionado
+            // 
+            ckbAltoAcucarAdicionado.AutoSize = true;
+            ckbAltoAcucarAdicionado.Enabled = false;
+            ckbAltoAcucarAdicionado.Location = new Point(382, 310);
+            ckbAltoAcucarAdicionado.Name = "ckbAltoAcucarAdicionado";
+            ckbAltoAcucarAdicionado.Size = new Size(172, 19);
+            ckbAltoAcucarAdicionado.TabIndex = 39;
+            ckbAltoAcucarAdicionado.Text = "Alto em Açúcar Adicionado";
+            ckbAltoAcucarAdicionado.UseVisualStyleBackColor = true;
+            // 
+            // ckbAltoGorduraSaturada
+            // 
+            ckbAltoGorduraSaturada.AutoSize = true;
+            ckbAltoGorduraSaturada.Enabled = false;
+            ckbAltoGorduraSaturada.Location = new Point(566, 312);
+            ckbAltoGorduraSaturada.Name = "ckbAltoGorduraSaturada";
+            ckbAltoGorduraSaturada.Size = new Size(163, 19);
+            ckbAltoGorduraSaturada.TabIndex = 40;
+            ckbAltoGorduraSaturada.Text = "Alto em Gordura Saturada";
+            ckbAltoGorduraSaturada.UseVisualStyleBackColor = true;
+            // 
+            // ckbAltoSodio
+            // 
+            ckbAltoSodio.AutoSize = true;
+            ckbAltoSodio.Enabled = false;
+            ckbAltoSodio.Location = new Point(751, 310);
+            ckbAltoSodio.Name = "ckbAltoSodio";
+            ckbAltoSodio.Size = new Size(101, 19);
+            ckbAltoSodio.TabIndex = 41;
+            ckbAltoSodio.Text = "Alto em Sódio";
+            ckbAltoSodio.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(776, 554);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(125, 35);
+            btnSalvar.TabIndex = 42;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
             // frmCriaTabelaNutri
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(934, 611);
+            Controls.Add(btnSalvar);
+            Controls.Add(ckbAltoSodio);
+            Controls.Add(ckbAltoGorduraSaturada);
+            Controls.Add(ckbAltoAcucarAdicionado);
+            Controls.Add(panel2);
             Controls.Add(label16);
             Controls.Add(label17);
             Controls.Add(label11);
@@ -478,5 +543,10 @@
         private Label label15;
         private Label label16;
         private Label label17;
+        private Panel panel2;
+        private CheckBox ckbAltoAcucarAdicionado;
+        private CheckBox ckbAltoGorduraSaturada;
+        private CheckBox ckbAltoSodio;
+        private Button btnSalvar;
     }
 }
